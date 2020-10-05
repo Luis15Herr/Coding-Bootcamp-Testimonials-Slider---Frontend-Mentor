@@ -1,23 +1,23 @@
 html {
-    height: 100%;
     @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap");
     font-family: "Inter", sans-serif;
+    height: 100%;
     body {
-        height: 100%;
-        margin: auto;
-        display: flex;
         align-content: center;
-        flex-wrap: wrap;
-        justify-content: center;
         background: url("../images/pattern-curve.svg");
-        background-repeat: no-repeat;
         background-position: left bottom;
+        background-repeat: no-repeat;
+        display: flex;
+        flex-wrap: wrap;
+        height: 100%;
+        justify-content: center;
+        margin: auto;
     }
 }
 .d-block {
-    visibility: visible;
     opacity: 1;
     transition: opacity 0.5s ease-in;
+    visibility: visible;
 }
 .d-none {
     opacity: 0;
@@ -25,70 +25,95 @@ html {
 }
 
 .container {
-    width: 1440px;
     margin: auto;
+    width: 1440px;
 }
 .main {
-    width: 90%;
-    padding: 70px 0;
     margin: auto;
-
+    padding: 70px 0;
+    width: 90%;
     .testimonial {
-        display: flex;
         align-items: center;
+        display: flex;
         height: 100%;
-        width: 90%;
         margin: auto;
+        width: 90%;
         .left {
             width: 50%;
             .content {
+                color: hsl(240, 38%, 20%);
                 font-size: 32px;
                 font-weight: 200;
-                color: hsl(240, 38%, 20%);
                 position: relative;
                 top: 30px;
                 .quotes {
+                    left: 20%;
                     position: absolute;
                     top: -25%;
-                    left: 20%;
                 }
                 .text {
+                    line-height: 39px;
                     position: relative;
                     width: 110%;
                     z-index: 2;
-                    line-height: 39px;
                 }
-                .autor {
-                    font-weight: 700;
-                    font-size: 20px;
+                .autor-box {
                     margin-top: 35px;
+                    .autor {
+                        color: hsl(240, 38%, 20%);
+                        font-size: 20px;
+                        font-weight: 700;
+                    }
                     span {
-                        font-weight: 500;
                         color: hsl(240, 18%, 77%);
+                        font-size: 20px;
+                        font-weight: 500;
                     }
                 }
             }
         }
         .right {
-            width: 50%;
             position: relative;
+            width: 50%;
             z-index: 1;
             .bg {
+                left: 50%;
                 position: absolute;
                 top: 50%;
-                left: 50%;
                 transform: translate(-50%, -51%);
             }
+
             ul {
+                display: flex;
                 list-style: none;
                 padding: 0;
-                display: inline;
                 position: relative;
+                .slider-controls {
+                    background-color: white;
+                    border-radius: 30px;
+                    bottom: 0;
+                    display: flex;
+                    height: 50px;
+                    justify-content: space-between;
+                    left: 0;
+                    overflow: hidden;
+                    position: absolute;
+                    transform: translate(70%, 50%);
+                    width: 100px;
+                    button {
+                        background: none;
+                        border: none;
+                        outline: none;
+                        width: 50%;
+                        &:hover {
+                            background-color: rgba(0, 0, 0, 0.1);
+                            transition: ease-in 0.1s;
+                        }
+                    }
+                }
                 li {
                     padding: 0;
                     img {
-                        -webkit-box-shadow: 15px 20px 18px 0px rgba(0, 0, 0, 0.1);
-                        -moz-box-shadow: 15px 20px 18px 0px rgba(0, 0, 0, 0.1);
                         box-shadow: 15px 20px 18px 0px rgba(0, 0, 0, 0.1);
                     }
                 }
@@ -96,10 +121,11 @@ html {
         }
     }
 }
+
 .attribution {
-    position: absolute;
     bottom: 25px;
     font-size: 11px;
+    position: absolute;
     text-align: center;
     .attribution a {
         color: hsl(228, 45%, 44%);
@@ -111,30 +137,155 @@ html {
     position: absolute;
 }
 
-.slider-controls {
-    position: absolute;
-    left: 30px;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    width: 100px;
-    border-radius: 30px;
-    -webkit-box-pack: justify;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
-    bottom: 0;
-    background-color: white;
-    height: 50px;
-    transform: translateY(50%);
-    overflow: hidden;
-    button {
-        border: none;
-        background: none;
-        width: 50%;
-        outline: none;
-        &:hover{
-            background-color: rgba(0, 0, 0, 0.1);
-            transition: ease-in 0.1s;
+@media (max-width: 1024px) {
+    html body {
+        background-size: auto;
+    }
+
+    .container {
+        width: 100%;
+        height: 100%;
+    }
+    .main {
+        width: 100%;
+        height: 100%;
+        padding: 0;
+        .testimonial {
+            width: 100%;
+            justify-content: center;
+            .left {
+                width: 75%;
+                .content {
+                    top: 0;
+                    padding-left: 50px;
+                    .quotes {
+                        width: 15%;
+                        left: 50%;
+                        transform: translatex(-50%);
+                        top: -10%;
+                    }
+                    .text {
+                        line-height: normal;
+                        width: 115%;
+                        font-size: 29px;
+                    }
+                    .autor-box {
+                        margin-top: 20px;
+                        .autor,
+                        .job {
+                            display: block;
+                        }
+                    }
+                }
+            }
+
+            .right {
+                width: 80%;
+                .bg {
+                    width: 100%;
+                }
+                .slider-controls {
+                    left: 50%;
+                    transform: translatex(-50%);
+                }
+                .slider-container {
+                    width: 75%;
+                    display: flex;
+                    justify-content: center;
+                    margin: auto;
+                }
+                ul {
+                    li {
+                        img {
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 980px) {
+    .main {
+        .testimonial {
+            flex-wrap: wrap-reverse;
+            align-content: flex-end;
+            .left {
+                width: 70%;
+                height: 40%;
+                margin-top: 5px;
+                .content {
+                    padding-left: 0;
+                    .text {
+                        width: 100%;
+                        text-align: center;
+                    }
+                }
+            }
+            .right {
+                height: 60%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                .slider-container {
+                    .slider-controls {
+                        bottom: 0;
+                        left: 50%;
+                        transform: translate(-50%, 50%);
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 450px) {
+    html body {
+        background-size: contain;
+    }
+    .main {
+        margin-top: 0;
+        .testimonial {
+            align-content: flex-end;
+            .right {
+                width: 75%;
+                height: 55%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                .slider-container {
+                    .slider-controls {
+                        bottom: 0;
+                        left: 50%;
+                        transform: translate(-50%, 50%);
+                        width: 70px;
+                        height: 40px;
+                        img {
+                            width: 8px;
+                            height: 13px;
+                        }
+                    }
+                }
+            }
+            .left {
+                width: 70%;
+                height: 45%;
+                margin-top: 5px;
+                .content {
+                    top: 0;
+                    .text {
+                        font-size: 17px;
+                    }
+                    .autor-box {
+                        margin-top: 10px;
+                        .autor,
+                        .job {
+                            font-size: 15px;
+                        }
+                    }
+                }
+            }
         }
     }
 }
